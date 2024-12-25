@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>試題分析 - 線上測驗系統</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-chart-bar"></i> 試題分析</h1>
+        
+        <div class="analysis-header">
+            <p id="student-info">學生：<span id="student-name"></span></p>
+            <p id="analysis-score">得分：<span id="final-score"></span></p>
+        </div>
+
+        <div id="analysis-container">
+            <!-- 分析內容將由 JavaScript 動態生成 -->
+        </div>
+
+        <div class="analysis-footer">
+            <button onclick="window.close()"><i class="fas fa-times"></i> 關閉視窗</button>
+            <p class="reminder-text">
+                <i class="fas fa-info-circle"></i>
+                若你的分數未達滿分，記得回到測驗以重新測驗喔！
+            </p>
+        </div>
+    </div>
+    <script src="analysis.js"></script>
+</body>
+</html> 

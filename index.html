@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>極端氣候下的女性求生攻略－隨堂測驗</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-graduation-cap"></i> 極端氣候下的女性求生攻略－隨堂測驗</h1>
+        
+        <div id="quiz-selection" class="screen">
+            <h2><i class="fas fa-list"></i> 請選擇要進行的測驗：</h2>
+            <div class="quiz-buttons">
+                <button onclick="selectQuiz(1)" class="quiz-select-btn active">
+                    <i class="fas fa-file-alt"></i>
+                    第一次隨堂測驗
+                    <span class="quiz-date">2024/03/01</span>
+                    <span class="quiz-status available">目前開放中</span>
+                </button>
+                <button class="quiz-select-btn disabled" disabled>
+                    <i class="fas fa-file-alt"></i>
+                    第二次隨堂測驗
+                    <span class="quiz-status">尚未開放</span>
+                </button>
+                <button class="quiz-select-btn disabled" disabled>
+                    <i class="fas fa-file-alt"></i>
+                    第三次隨堂測驗
+                    <span class="quiz-status">尚未開放</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="start-screen" class="screen" style="display: none;">
+            <h2><i class="fas fa-pencil-alt"></i> 準備好開始測驗了嗎？</h2>
+            <div class="student-selection">
+                <label for="student-select">請選擇姓名：</label>
+                <select id="student-select" required>
+                    <option value="">請選擇...</option>
+                </select>
+            </div>
+            <div class="start-icons">
+                <i class="fas fa-book"></i>
+                <i class="fas fa-brain"></i>
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <button id="start-btn" disabled><i class="fas fa-play"></i> 開始作答</button>
+            <button onclick="backToQuizSelection()" class="back-btn">
+                <i class="fas fa-arrow-left"></i> 返回測驗選擇
+            </button>
+        </div>
+
+        <div id="quiz-screen" class="screen" style="display: none;">
+            <div class="progress-container">
+                <div class="progress-info">
+                    <i class="fas fa-tasks"></i>
+                    <span>進度：<span id="current-question">0</span>/<span id="total-questions">0</span></span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+
+            <div id="quiz-container">
+                <!-- 題目會在這裡動態生成 -->
+            </div>
+
+            <button id="next-btn"><i class="fas fa-arrow-right"></i> 下一題</button>
+            <button id="submit-btn" style="display: none;"><i class="fas fa-check"></i> 提交答案</button>
+        </div>
+
+        <div id="result-screen" class="screen" style="display: none;">
+            <div class="result-container">
+                <i class="fas fa-award result-icon"></i>
+                <p id="score"></p>
+                <p id="message"></p>
+                <div class="result-buttons">
+                    <button id="analysis-btn"><i class="fas fa-chart-bar"></i> 試題分析</button>
+                    <button id="retry-btn" style="display: none;"><i class="fas fa-redo"></i> 重新測驗</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
